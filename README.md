@@ -3,6 +3,13 @@
 ## Overview
 This program analyzes YouTube video transcripts within a given playlist to count occurrences of user-specified words. The results can be printed to the console or saved to a file.
 
+## Features
+- Retrieves the titles of videos in a YouTube playlist.
+- Fetches transcripts of videos (if available).
+- Searches transcripts for user-defined words.
+- Displays the word count for each video and totals across the playlist.
+- Optionally saves the results to a file.
+
 ## Dependencies
 The program requires the following Python libraries:
 - `requests`
@@ -13,12 +20,36 @@ The program requires the following Python libraries:
 
 Ensure these dependencies are installed before running the program.
 
-## Features
-- Retrieves the titles of videos in a YouTube playlist.
-- Fetches transcripts of videos (if available).
-- Searches transcripts for user-defined words.
-- Displays the word count for each video and totals across the playlist.
-- Optionally saves the results to a file.
+
+## Usage
+1. Run the script.
+2. Enter a YouTube playlist URL.
+3. Enter words to search for in video transcripts.
+4. Choose whether to save results to a file.
+5. If saving, enter a valid file path.
+6. The program will process the playlist and display/save the results.
+
+## Example Output
+```
+# Playlist Word Analysis
+
+Getting Videos from: Sample Playlist
+
+Video Title 1:
+word1 appears 3 times
+word2 appears 5 times
+
+Video Title 2:
+No keywords found
+
+Total Counts:
+word1 appears 3 times
+word2 appears 5 times
+```
+
+## Notes
+- If a transcript is unavailable for a video, it is skipped.
+- The program converts all text to lowercase to ensure case-insensitive word matching.
 
 ## Functions
 
@@ -52,34 +83,3 @@ Displays the word analysis results in the console instead of writing to a file.
 
 ### `main()`
 Coordinates user input and calls appropriate functions. Determines whether to print results or write them to a file.
-
-## Usage
-1. Run the script.
-2. Enter a YouTube playlist URL.
-3. Enter words to search for in video transcripts.
-4. Choose whether to save results to a file.
-5. If saving, enter a valid file path.
-6. The program will process the playlist and display/save the results.
-
-## Notes
-- If a transcript is unavailable for a video, it is skipped.
-- The program converts all text to lowercase to ensure case-insensitive word matching.
-- If a directory for file saving does not exist, the user must enter a different path.
-
-## Example Output
-```
-# Playlist Word Analysis
-
-Getting Videos from: Sample Playlist
-
-Video Title 1:
-word1 appears 3 times
-word2 appears 5 times
-
-Video Title 2:
-No keywords found
-
-Total Counts:
-word1 appears 3 times
-word2 appears 5 times
-```
